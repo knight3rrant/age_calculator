@@ -13,7 +13,19 @@
 		<div class="text">
 		<?php if (!empty($_POST['dob']) ): ?>
 		<?php
-		$datetime1 = new DateTime($_POST['dob']);
+
+
+		$sd= htmlspecialchars($_POST['dob']);
+		
+	try {
+		$datetime1 = new DateTime($sd);
+			} catch (Exception $e) {
+			    echo "<h1>Sorry!<br> <span style='font-size:80px'>🙄</span> <br>Invalid input!</h1>";
+			    ?> 
+			    <a href="index.php">Check again? <br> type something like [17th july  1998]</a>
+			    <?php
+			    exit(1);
+			}
 		$datetime2 = new DateTime('now');
 		$interval = $datetime1->diff($datetime2);
 		?>

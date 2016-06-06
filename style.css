@@ -8,7 +8,7 @@ body{
 	max-height: 100%;
 	background-image: url(sativa.png);
 	background-repeat: repeat;
-	text-transform: uppercase;
+	text-transform: capitalize;
 
 }
 ::-webkit-input-placeholder {
